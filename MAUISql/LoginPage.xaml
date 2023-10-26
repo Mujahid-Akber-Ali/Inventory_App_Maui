@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUISql.LoginPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:handlers="clr-namespace:MAUISql.Handlers"
+             Title="LoginPage">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Start">
+
+        <Image Source="utopia" HeightRequest="200" WidthRequest="350" />
+
+        <VerticalStackLayout Spacing="10">
+            <Label Text="Welcome!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Label Text="Login to your account" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <handlers:BorderlessEntry Margin="20,0,0,0" VerticalOptions="Center" Placeholder="User Name" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <handlers:BorderlessEntry Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Sign In" BackgroundColor="Green"  WidthRequest="200"  FontSize="21" HeightRequest="50" CornerRadius="10" HorizontalOptions="Center" Clicked="Login_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
